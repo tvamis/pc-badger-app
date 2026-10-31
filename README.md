@@ -1,4 +1,3 @@
-# pc-badger-app
 # PlayCricket Badger App
 
 # What it is
@@ -40,9 +39,9 @@ Covered by our key?: We will need to have an API with the LLM needed, but this i
 # How will it be built
 
 The backend in this phase will largely be built in Python, this will be housed in AWS, using its various products:
-** DynamoDB - house the data to output.
-** Lambda - runs through python code to fetch the data and run through stat calculations.
-** S3 - store raw data.
+- DynamoDB - house the data to output.
+- Lambda - runs through python code to fetch the data and run through stat calculations.
+- S3 - store raw data.
 To build the application when it is ready for production. It will also be built using Terraform, to handle IaC for a more efficient and adaptable application.
 
 # Status
