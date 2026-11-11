@@ -1,4 +1,3 @@
-# github action to run build and test in rust without human credentials.
 name: rust build and test
 on: push
 
@@ -6,9 +5,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-    # as the machine made available via runs-on is empty, we need to pull the code from our repository, uses: allows us to add in this check with the actions/checkout@v4. It has already been built into actions, so it can be found via actions/actionname and checks the whole repo.
     - uses: actions/checkout@v4
-    # these are the same commands we run in terminal for rust, but we are getting these run for us. We have to cite the working-directory, which in this case is the cricket_stats folder where it will look for the cargo.toml file to run the actions.
     - name: cargo build
       working-directory: cricket_stats
       run: cargo build
@@ -16,5 +13,3 @@ jobs:
     - name: cargo test
       working-directory: cricket_stats
       run: cargo test
-      
-      # NOTE: This needs to sit in a .github/workflows folder in your main repository because github only looks for workflows at the top of the repository, any other location and it's ignored. the commands find the cargo.toml file via the working-directory command.
